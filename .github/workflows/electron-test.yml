@@ -33,6 +33,7 @@ jobs:
         run: |
           cd ${{ matrix.package_root }}
           ${{ matrix.package_manager }} install
+          
       - name: Run action
         uses: ./
         with:

@@ -5,7 +5,7 @@
   "main": "main.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Logikoz/Electron-Update.git"
+    "url": "https://github.com/AtmoSW/player2-prod.git"
   },
   "scripts": {
     "start": "electron .",

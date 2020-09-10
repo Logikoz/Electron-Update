@@ -1,0 +1,47 @@
+{
+  "name": "electron-update",
+  "version": "1.0.8",
+  "description": "Application of test",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Logikoz/Electron-Update.git"
+  },
+  "scripts": {
+    "lint": "eslint --max-warnings 0 \"**/*.js\"",
+    "lint:fix": "yarn lint --fix",
+    "format": "prettier --ignore-path ./.gitignore --list-different \"**/*.{css,html,js,json,jsx,less,md,scss,ts,tsx,vue,yaml,yml}\"",
+    "format:fix": "yarn format --write"
+  },
+  "author": {
+    "name": "Ruan Carlos CS",
+    "email": "ruancarlos14@hotmail.com"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^8",
+    "electron-builder": "^22.8.0",
+    "@samuelmeuli/eslint-config": "^6.0.0",
+    "@samuelmeuli/prettier-config": "^2.0.1",
+    "eslint": "6.8.0",
+    "eslint-config-airbnb-base": "14.1.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-import": "^2.20.2",
+    "prettier": "^2.0.4"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": "@samuelmeuli/eslint-config",
+    "env": {
+      "node": true
+    }
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "test/"
+  ],
+  "prettier": "@samuelmeuli/prettier-config",
+  "dependencies": {
+    "electron-updater": "^4.3.4"
+  }
+}

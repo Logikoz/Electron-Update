@@ -1,13 +1,6 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const { autoUpdater } = require('electron-updater');
 
-autoUpdater.setFeedURL({
-  provider: 'github',
-  owner: 'Logikoz',
-  repo: 'Electron-Update',
-  token: '940affcd12135c0801146a540ca922d8926afa92'
-});
-
 let mainWindow;
 
 function createWindow() {
@@ -49,14 +42,14 @@ ipcMain.on('app_version', (event) => {
   event.sender.send('app_version', { version: app.getVersion() });
 });
 
-autoUpdater.on('download-progress', (progressObj) => {
-  console.log("Está baixando");
-  mainWindow.webContents.send('download_progress', { progress: progressObj.percent });
-});
-
 autoUpdater.on('update-available', () => {
   console.log("Atualizaçao encontrada");
   mainWindow.webContents.send('update_available');
+});
+
+autoUpdater.on('download-progress', (progressObj) => {
+  console.log("Está baixando");
+  mainWindow.webContents.send('download_progress', { progress: progressObj.percent });
 });
 
 autoUpdater.on('update-downloaded', () => {
